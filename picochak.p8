@@ -95,9 +95,9 @@ end
 function _update60()
 	mfx_time = stat(25) + stat(26) / 4096
 
-  if mfx_time >= mfx_scenario[mfx_idx] then
+	if mfx_time >= mfx_scenario[mfx_idx] then
 		local cmd = mfx_scenario[mfx_idx + 1]
-    mfx_idx += 2
+		mfx_idx += 2
 		if band(cmd, 0x0.8) == 0 then
 			poke4(0x5f40, cmd)
 		elseif cmd == 0x0.8 then
@@ -110,7 +110,7 @@ function _update60()
 			toggle_loop(mfx_l1)
 			toggle_loop(mfx_l2)
 		end
-  end
+	end
 
 	if (not coresume(fx_coupdate)) next_fx()
 	fx_update()
